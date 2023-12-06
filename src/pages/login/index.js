@@ -64,14 +64,14 @@ export default function Login() {
                                 id="barcode"
                                 name="Баркод"
                                 placeholder="Баркод"
-                                className="font-bold bg-[#D9D9D9]"
+                                className="font-bold bg-[#fff]"
                             />
                             <input
                                 type="password"
                                 id="password"
                                 name="Пароль"
                                 placeholder="Пароль"
-                                className="font-bold bg-[#D9D9D9]"
+                                className="font-bold bg-[#fff]"
                             />
                             <button type="submit">Войти</button>
                         </form>
