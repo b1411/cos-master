@@ -1,0 +1,60 @@
+.reportListItem {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+
+    .reportListItem__metadata {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .reportListItem__metadata__title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .reportListItem__metadata__status {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .reportListItem__metadata__date {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+        }
+    }
+
+    .reportListItem__content {
+        .reportListItem__content__text {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+        }
+    }
+    .reportListItem__files {
+
+
+        .reportListItem__files__file {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: #F5F5F5;
+            margin-top: 0.5rem;
+
+            .reportListItem__files__file {
+                font-size: 1rem;
+                font-weight: 400;
+                color: #666;
+            }
+        }
+    }
+}

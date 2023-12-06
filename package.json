@@ -1,0 +1,37 @@
+{
+  "name": "cos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.17.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@parse/react-ssr": "^0.0.1-alpha.18",
+    "animate.css": "^4.1.1",
+    "antd": "^5.9.1",
+    "bootstrap": "^5.3.2",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "next": "13.4.19",
+    "nextjs-progressbar": "^0.0.16",
+    "nprogress": "^0.2.0",
+    "parse": "^4.2.0-beta.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-select": "^5.7.4",
+    "sass": "^1.66.0",
+    "save": "^2.9.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
+  }
+}

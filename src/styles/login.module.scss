@@ -1,0 +1,18 @@
+.ellipsis {
+    position: absolute;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background: #D9C6C6;    
+    mix-blend-mode: color-burn;
+    height: 100%;
+    width: 100%;
+    top: -52%;
+    z-index: 1;
+}
+
+@media  (max-width: 767px) {
+    .ellipsis {
+        top: -100%;
+    }
+}
+
+
