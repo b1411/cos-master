@@ -38,7 +38,25 @@ export default function Information({ informationQuery }) {
                 <Content className="bg-uibGreen opacity-75">
                     <div className="page-wo-logo">
                         <div className="relative z-[10] h-full max-w-[1140px] px-[20px] mx-auto">
-                            {information["описание"]}
+                            <h2>{information["полное название"]}</h2>
+                            <div>{information["описание"]}</div>
+                            <div>
+                                {Array.isArray(
+                                    information["контактный номер"],
+                                ) ? (
+                                    information["контактный номер"].map(
+                                        (contact, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <p>{contact}</p>
+                                                </div>
+                                            );
+                                        },
+                                    )
+                                ) : (
+                                    <p>{information["контактный номер"]}</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </Content>
