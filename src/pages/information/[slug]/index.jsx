@@ -9,6 +9,7 @@ import { useRootContext } from "@/components/Context";
 import { encodeParseQuery, useParseQuery } from "@parse/react-ssr";
 import Link from "next/link";
 import { useEffect } from "react";
+import { info } from "@/data/departmentInfo";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"], display: "swap" });
 
@@ -17,16 +18,8 @@ const { Header, Sider, Content } = Layout;
 export default function Information({ informationQuery }) {
     const ctx = useRootContext();
     const router = useRouter();
-    const [information, setInformation] = useState(null);
-
-    const { isLive, isLoading, isSyncing, results, count, error, reload } =
-        useParseQuery(informationQuery);
-    useEffect(() => {
-        if (results) {
-            setInformation(results[0]);
-        }
-    }, [results]);
-
+    const slug = router.query.slug;
+    const information = info[slug];
     return (
         <Layout>
             <Sider
@@ -45,7 +38,7 @@ export default function Information({ informationQuery }) {
                 <Content className="bg-uibGreen opacity-75">
                     <div className="page-wo-logo">
                         <div className="relative z-[10] h-full max-w-[1140px] px-[20px] mx-auto">
-                            {information?.get("content")}
+                            {information["описание"]}
                         </div>
                     </div>
                 </Content>

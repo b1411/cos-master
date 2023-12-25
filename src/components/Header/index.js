@@ -147,6 +147,62 @@ const items = [
                     ],
                 },
                 {
+                    key: "1-10",
+                    label: "ДМ",
+                    children: [
+                        {
+                            key: "1-10-1",
+                            label: (
+                                <Link href={`/information/dm`}>Информация</Link>
+                            ),
+                        },
+                        {
+                            key: "1-10-2",
+                            label: <Link href={`/complaint/dm`}>Жалоба</Link>,
+                        },
+                        {
+                            key: "1-10-3",
+                            label: (
+                                <Link href={`/suggestion/dm`}>Предложение</Link>
+                            ),
+                        },
+                        {
+                            key: "1-10-4",
+                            label: <Link href={`/service/dm`}>Услуга</Link>,
+                        },
+                    ],
+                },
+                {
+                    key: "1-11",
+                    label: "ДПОП",
+                    children: [
+                        {
+                            key: "1-11-1",
+                            label: (
+                                <Link href={`/information/dpop`}>
+                                    Информация
+                                </Link>
+                            ),
+                        },
+                        {
+                            key: "1-11-2",
+                            label: <Link href={`/complaint/dpop`}>Жалоба</Link>,
+                        },
+                        {
+                            key: "1-11-3",
+                            label: (
+                                <Link href={`/suggestion/dpop`}>
+                                    Предложение
+                                </Link>
+                            ),
+                        },
+                        {
+                            key: "1-11-4",
+                            label: <Link href={`/service/dpop`}>Услуга</Link>,
+                        },
+                    ],
+                },
+                {
                     key: "1-5",
                     label: "Деканат",
                     children: [
@@ -425,7 +481,6 @@ const profileItems = [
                     document.cookie = `sessionToken=\"\"; path=/; max-age=0`;
                     localStorage.clear();
                     await Parse.User.logOut();
-
                 }}
             >
                 {" "}
@@ -581,9 +636,7 @@ export default function MyHeader() {
                     }}
                 >
                     <Space>
-                        <div>
-                            <FontAwesomeIcon icon={faBars} />
-                        </div>
+                        <FontAwesomeIcon icon={faBars} />
                     </Space>
                 </Button>
             </div>
