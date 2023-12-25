@@ -16,13 +16,13 @@ export default function Login() {
         e.preventDefault();
         const barcode = e.target.barcode.value;
         const password = e.target.password.value;
-        const user = await Parse.User.logIn(barcode, password);
-        if (user) {
+        try {
+            const user = await Parse.User.logIn(barcode, password);
             const sessionToken = user.getSessionToken();
             document.cookie = `sessionToken=${sessionToken}; path=/`;
             message.success("Вы успешно вошли в систему");
             router.push("/");
-        } else {
+        } catch (error) {
             message.error("Неверный баркод или пароль");
         }
     }
