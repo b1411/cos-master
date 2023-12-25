@@ -180,7 +180,7 @@ export default function CreateReport() {
                                 <h1 className=" mt-5 text-2xl text-center font-bold text-uibGreen">
                                     Предложение
                                 </h1>
-                                <div className="mt-4">
+                                <div className="mt-4 text-white">
                                     <h4 className="font-bold mb-3">
                                         Перед тем как отправить предложение,
                                         ознакомьтесь с правилами заполнения:
