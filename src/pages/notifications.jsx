@@ -31,7 +31,7 @@ export default function Notifications({ notificationsQuery}) {
                 <Sidebar />
             </Sider>
             <Layout>
-                <Header  className="bg-[#C3AA95] sticky top-0 left-0 w-[100%] z-[20] h-max px-0">
+                <Header  className="bg-transparent fixed top-0 left-0 w-[100%] z-[20] h-max px-0">
                     <MyHeader currentUser={Parse.User.current()} />
                 </Header>
                 <Content className="bg-page">
