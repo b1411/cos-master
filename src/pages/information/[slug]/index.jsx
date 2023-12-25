@@ -38,7 +38,7 @@ export default function Information({ informationQuery }) {
                 <Content className="bg-uibGreen opacity-75">
                     <div className="page-wo-logo">
                         <div className="relative z-[10] h-full max-w-[1000px] px-[20px] mx-auto">
-                            <div className="bg-[#006642] text-white px-5 py-4 rounded-md shadow-md absolute top-1/2 -translate-y-[70%]">
+                            <div className="bg-[#006642] text-white px-5 py-4 rounded-md shadow-md absolute mt-[100px]">
                                 <h2 className="text-center font-bold text-2xl mb-[40px]">
                                     {information["полное название"]}
                                 </h2>
