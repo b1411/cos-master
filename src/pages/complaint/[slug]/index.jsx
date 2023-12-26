@@ -65,6 +65,7 @@ const departments = [
     {
         name: "ДМ",
         slug: "dm",
+        objId: "C3iZHzhf3e"
     },
     {
         name: "ДПОП",
@@ -116,37 +117,35 @@ export default function CreateReport() {
         );
         try {
             await report.save();
-            fileList.map(async (file) => {
-                const FileObj = new Parse.Object("File");
-                const parseFile = new Parse.File(file.name, file);
-                await parseFile.save();
-                FileObj.set("file", parseFile);
-                FileObj.set("reportPtr", report.toPointer());
-                await FileObj.save();
-                message.success("Жалоба успешно отправлена");
-            });
-        } catch (error) {
-            message.error("Что-то пошло не так");
-        } finally {
-            try {
-                const notifications = new Parse.Object("Notifications");
-                const userQuery1 = new Parse.Query(Parse.User);
-                userQuery1.equalTo(
-                    "objectId",
-                    departments.find((dep) => dep.slug === router.query.slug)
-                        .objId,
-                );
-                const userPtr = (await userQuery1.first()).toPointer();
-                notifications.set("userPtr", userPtr);
-                notifications.set("type", "Жалоба");
-                notifications.set("status", "на рассмотрении");
-                notifications.set("reportPtr", report.toPointer());
-                notifications.set("content", e.target[1].value);
-                notifications.set("isRead", false);
-                await notifications.save();
-            } catch (error) {
-                message.error("Что-то пошло не так");
+            if (fileList !== undefined || fileList.length > 0) {
+                fileList.map(async (file) => {
+                    const FileObj = new Parse.Object("File");
+                    const parseFile = new Parse.File(file.name, file);
+                    await parseFile.save();
+                    FileObj.set("file", parseFile);
+                    FileObj.set("reportPtr", report.toPointer());
+                    await FileObj.save();
+                });
             }
+            message.success("Жалоба успешно отправлена");
+        } catch (error) {
+            message.error("Файлы не удалось сохранить");
+        } finally {
+            const notifications = new Parse.Object("Notifications");
+            const userQuery1 = new Parse.Query(Parse.User);
+            console.log(userQuery1)
+            userQuery1.equalTo(
+                "objectId",
+                departments.find((dep) => dep.slug === router.query.slug).objId,
+            );
+            const userPtr = (await userQuery1.first()).toPointer();
+            notifications.set("userPtr", userPtr);
+            notifications.set("type", "Жалоба");
+            notifications.set("status", "на рассмотрении");
+            notifications.set("reportPtr", report.toPointer());
+            notifications.set("content", e.target[1].value);
+            notifications.set("isRead", false);
+            await notifications.save();
         }
     }
 
