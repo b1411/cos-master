@@ -158,10 +158,10 @@ export default function CreateReport() {
                     <Header className="bg-transparent fixed top-0 left-0 w-[100%] z-[20] h-max px-0">
                         <MyHeader currentUser={Parse.User.current()}/>
                     </Header>
-                    <Content className="bg-uibGreen opacity-75">
-                        <div className={montserrat.className + " page-wo-logo"}>
-                            <div className="relative z-[10] h-full max-w-[1140px] px-[20px] mx-auto">
-                                <h1 className=" mt-5 text-2xl text-center font-bold text-uibGreen">
+                    <Content className="opacity-75">
+                        <div className={montserrat.className + " page-wo-logo page-slug"}>
+                            <div className="relative z-[10] h-full max-w-[1140px] px-[20px] mx-auto text-white">
+                                <h1 className=" mt-5 text-2xl text-center font-bold">
                                     Жалоба
                                 </h1>
                                 <div className="mt-4">
