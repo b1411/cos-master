@@ -62,6 +62,14 @@ const departments = [
         name: "Библиотека",
         slug: "lib",
     },
+    {
+        name: "Департамент маркетинга",
+        slug: "dm",
+    },
+    {
+        name: "Департамент продвижения образовательных программ",
+        slug: "dpop",
+    },
 ];
 
 export default function CreateReport() {
@@ -156,10 +164,14 @@ export default function CreateReport() {
                 </Sider>
                 <Layout>
                     <Header className="bg-transparent fixed top-0 left-0 w-[100%] z-[20] h-max px-0">
-                        <MyHeader currentUser={Parse.User.current()}/>
+                        <MyHeader currentUser={Parse.User.current()} />
                     </Header>
                     <Content className="opacity-75">
-                        <div className={montserrat.className + " page-wo-logo page-slug"}>
+                        <div
+                            className={
+                                montserrat.className + " page-wo-logo page-slug"
+                            }
+                        >
                             <div className="relative z-[10] h-full max-w-[1140px] px-[20px] mx-auto text-white">
                                 <h1 className=" mt-5 text-2xl text-center font-bold">
                                     Жалоба
@@ -200,7 +212,9 @@ export default function CreateReport() {
                                         ></textarea>
                                         <div className="max-w-[500px] min-w-[250x] w-[100%]">
                                             <Upload {...UploadProps}>
-                                                <Button className="secondary">Загрузить файлы</Button>
+                                                <Button className="secondary">
+                                                    Загрузить файлы
+                                                </Button>
                                             </Upload>
                                         </div>
                                         <button
